@@ -29,4 +29,4 @@ int musico_ordenarPorString(Musico array[],int tam);                            
 int musico_listar(Musico array[], int tam);                      //cambiar musico
 
 
-
+int musico_ordenarPorInt(Musico array[],int tam);

@@ -15,7 +15,7 @@ int informe_totalOrquestas(Orquesta arrayOrquesta[], int tamArray)
     int i;
     int cont = 0;
 
-    for(i = 0; i < tamArray; i++)
+    for(i = 0; i <= tamArray; i++)
     {
         if(arrayOrquesta[i].isEmpty == 0)
         {
@@ -25,6 +25,7 @@ int informe_totalOrquestas(Orquesta arrayOrquesta[], int tamArray)
 
     return cont;
 }
+
 
 
 
@@ -121,6 +122,213 @@ int cantOrquestasMismoTipo(Orquesta arrayOrquesta[], int tamArray, int tipoACont
     }
 
     return cont;
+}
+
+//***************************************************************************
+
+int inf_a(Musico arrayMusico[], Orquesta arrayOrquesta[], int tamArray)
+{
+    int i;
+    int ret = -1;
+    //int auxIdOrquesta;
+    int IDmasDeCinco;
+    int cantMus;
+    int idOrqActual = arrayMusico[0].idOrquesta;
+
+
+
+    musico_ordenarPorInt(arrayMusico, tamArray);
+
+    cantMus = cantMusicoMismoTipo(arrayOrquesta, tamArray, idOrqActual);// cantidad de musicos en un mismo idOrquesta
+
+    if(cantMus > 5)
+    {
+        printf("Nombre de orquesta con mas de 5 musicos : %s", arrayOrquesta[0].nombre);
+    }
+
+    for(i = 0; i < tamArray; i++)
+    {
+
+        if(arrayMusico[i].idOrquesta != arrayMusico[i-1].idOrquesta)
+        {
+            idOrqActual = arrayMusico[i].idOrquesta;
+
+
+                cantMus = cantMusicoMismoTipo(arrayOrquesta, tamArray, idOrqActual);
+                if(cantMus > 5)
+                {
+
+                        IDmasDeCinco = idOrqActual;
+                        ret = 0;
+                        printf("El id orquesta con mas de 5 musicos es %d", IDmasDeCinco);
+                        //printf("Nombre de orquesta con mas de 5 musicos : %s", arrayMusico[auxIdOrquesta].nombre);
+
+
+
+                }
+        }
+
+    }
+    return ret;
+}
+
+int cantMusicoMismoTipo(Orquesta arrayOrquesta[], int tamArray, int idOrqActual)
+{
+    int i;
+    int cont = 0;
+
+    for(i = 0; i < tamArray; i++)
+    {
+        if(arrayOrquesta[i].isEmpty == 0)
+        {
+            if(arrayOrquesta[i].idOrquesta == idOrqActual)
+            {
+                cont++;
+            }
+        }
+
+    }
+
+    return cont;
+}
+
+//int orquestaTieneMusicos(Musico arrayMusico[],int len,int auxIdOrquesta)
+//{
+//    int i;
+//    int tiene=-1;
+//    for(i=0; i<len;i++)
+//    {
+//        if(arrayMusico[i].isEmpty==0)
+//        {
+//            if( arrayMusico[i].idOrquesta == auxIdOrquesta)
+//            {
+//                tiene=0;
+//                break;
+//            }
+//        }
+//    }
+//    return tiene;
+//}
+//***************************************************************************
+int inf_b(Musico arrayMusico[], int tamArray)
+{
+    int i;
+
+    for(i = 0;i<tamArray; i++)
+    {
+        if(arrayMusico[i].edad > 30)
+        {
+            printf("\n ID: %d\n nombre: %s\n apellido: %s\n edad: %d\n idOrquesta: %d\n idInstrumento: %d\n",
+                   arrayMusico[i].idMusico,arrayMusico[i].nombre,arrayMusico[i].apellido,arrayMusico[i].edad,arrayMusico[i].idOrquesta,arrayMusico[i].idInstrumento);
+        }
+    }
+ return 0;
+}
+
+//***************************************************************************
+
+int inf_c(Orquesta arrayOrquesta[], int tamArray)
+{
+    int ret = -1;
+    int i;
+    char auxLugar[50];
+
+    utn_getTexto("\nIngrese lugar de orquesta: ","\nError",1,TEXT_SIZE,1, auxLugar);
+
+
+    for(i = 0; i< tamArray; i++)
+    {
+        if(arrayOrquesta[i].isEmpty == 0)
+        {
+            if(strcmp(auxLugar, arrayOrquesta[i].lugar)==0)
+            {
+                 printf("\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %d\n",
+                   arrayOrquesta[i].idOrquesta,arrayOrquesta[i].nombre,arrayOrquesta[i].lugar,arrayOrquesta[i].tipo);
+                ret = 0;
+            }
+        }
+
+    }
+
+    return ret;
+}
+
+//***************************************************************************
+
+
+
+int inf_e(Musico arrayMusico[], int tamArray)
+{
+    int ret = -1;
+    int i;
+    int auxOrq;
+
+    utn_getUnsignedInt("\nIngrese idOrquesta de musico: ","\nError",0,sizeof(int),0,110,3,&auxOrq);           //mensaje + cambiar campo varInt
+
+
+    for(i = 0; i< tamArray; i++)
+    {
+        if(arrayMusico[i].isEmpty == 0)
+        {
+            if(auxOrq == arrayMusico[i].idOrquesta)
+            {
+                 printf("\n ID: %d\n nombre: %s\n apellido: %s\n edad: %d\n idOrquesta: %d\n idInstrumento: %d\n",
+                   arrayMusico[i].idMusico,arrayMusico[i].nombre,arrayMusico[i].apellido,arrayMusico[i].edad,arrayMusico[i].idOrquesta,arrayMusico[i].idInstrumento);
+                ret = 0;
+            }
+        }
+
+    }
+    return ret;
+}
+
+//***************************************************************
+
+//int inf_f(Musico arrayMusico[], int tamArray)
+//{
+//    return 0;
+//}
+//***************************************************************
+
+//int inf_g(Musico arrayMusico[], Instrumento arrayInstrumento[], int tamArray)
+//{
+//    int ret = -1;
+//    int i;
+//    int auxOrq;
+//
+//    utn_getUnsignedInt("\nIngrese idOrquesta de musico: ","\nError",0,sizeof(int),0,110,3,&auxOrq);           //mensaje + cambiar campo varInt
+//
+//
+//    for(i = 0; i< tamArray; i++)
+//    {
+//        if(arrayMusico[i].isEmpty == 0)
+//        {
+//            if(strcmp(auxLugar, arrayOrquesta[i].lugar)==0)
+//            {
+//                 printf("\n ID: %d\n nombre: %s\n apellido: %s\n edad: %d\n idOrquesta: %d\n idInstrumento: %d\n",
+//                   arrayMusico[i].idMusico,arrayMusico[i].nombre,arrayMusico[i].apellido,arrayMusico[i].edad,arrayMusico[i].idOrquesta,arrayMusico[i].idInstrumento);
+//                ret = 0;
+//            }
+//        }
+//
+//    }
+//    return ret;
+//
+//}
+//***************************************************************************
+
+void inf_h(Musico arrayMusico[], Orquesta arrayOrquesta[], int tamArray)
+{
+    int auxTotalOrq;
+    int auxTotalMus;
+    int prom;
+
+    auxTotalOrq = informe_totalOrquestas(arrayOrquesta, tamArray);
+    auxTotalMus = informe_totalMusicos(arrayMusico, tamArray);
+
+    prom = auxTotalMus/auxTotalOrq;
+
+    printf("\nEl promedio de musicos por orquesta es de %d\n", prom);
 }
 
 

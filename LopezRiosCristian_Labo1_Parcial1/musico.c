@@ -171,8 +171,8 @@ int musico_alta(Musico arrayMusico[], int tam, int* contadorID)                 
             arrayMusico[posicion].isEmpty=0;
             utn_getName("\nIngrese nombre de musico: ","\nError",1,TEXT_SIZE,3,arrayMusico[posicion].nombre);                      //mensaje + cambiar campo nombre
             utn_getName("\nIngrese apellido de musico: ","\nError",1,TEXT_SIZE,3,arrayMusico[posicion].apellido);                      //mensaje + cambiar campo nombre
-            //utn_getUnsignedInt("\nIngrese edad de musico: ","\nError",1,sizeof(int),1,1,1,&arrayMusico[posicion].edad);           //mensaje + cambiar campo varInt
-            utn_getEdad("\nIngrese edad de musico: ","\nError",0,110,3,&arrayMusico[posicion].edad);
+            utn_getUnsignedInt("\nIngrese edad de musico: ","\nError",1,sizeof(int),1,1,1,&arrayMusico[posicion].edad);           //mensaje + cambiar campo varInt
+            //utn_getEdad("\nIngrese edad de musico: ","\nError",0,110,3,&arrayMusico[posicion].edad);
             utn_getUnsignedInt("\nIngrese idOrquesta de musico: ","\nError",0,sizeof(int),0,110,3,&arrayMusico[posicion].idOrquesta);           //mensaje + cambiar campo varInt
             //informe_getIdOrquesta("\nIngrese idOrquesta de musico: ","\nError", 0, sizeof(int), 1, 1, 3, &arrayMusico[posicion].idOrquesta, arrayOrquesta, tam);
             utn_getUnsignedInt("\nIngrese idInstrumento de musico: ","\nError",1,sizeof(int),1,1,3,&arrayMusico[posicion].idInstrumento);           //mensaje + cambiar campo varInt
@@ -552,6 +552,91 @@ int musico_ordenarPorString(Musico array[],int tam)                             
     }
     return retorno;
 }
+
+//*****************************************
+
+int musico_ordenarPorInt(Musico array[],int tam)
+{
+    int retorno = -1;
+    int i, j;
+    int opcion;
+
+    Musico musicoAux;
+
+    if(array!=NULL && tam>=0)
+    {
+
+        utn_getUnsignedInt("Como desea ordenar? Elija una opcion : \n1 - Ordenar de forma ascendente (A - Z)\n2 - Ordenar de forma descendente (Z - A)\n","\nError", 1, sizeof(int), 1, 1, 3, &opcion);
+
+
+        while(opcion != 1 && opcion != 2)
+        {
+            utn_getUnsignedInt("Error, seleccione opcion 1 o 2 : \n","\nError", 1, sizeof(int), 1, 1, 3, &opcion);
+        }
+
+
+        switch(opcion)
+        {
+            case 1:
+                for(i = 0; i < tam - 1; i++)
+                {
+                    if(array[i].isEmpty == 1)
+                    {
+                        continue;
+                    }
+                    for(j = i + 1; j < tam; j++)
+                    {
+                        if(array[j].isEmpty == 1)
+                        {
+                            continue;
+                        }
+                        if(array[i].idOrquesta > array[j].idOrquesta) // Ordena de forma ascendente por nombre
+                        {
+
+                            musicoAux = array[i];
+                            array[i] = array[j];
+                            array[j] = musicoAux;
+
+                        }
+                    }
+                }
+                musico_listar(array, tam);
+                break;
+            case 2:
+                for(i = 0; i < tam - 1; i++)
+                {
+                    if(array[i].isEmpty == 1)
+                    {
+                        continue;
+                    }
+                    for(j = i + 1; j < tam; j++)
+                    {
+                        if(array[j].isEmpty == 1)
+                        {
+                            continue;
+                        }
+                        if(array[i].idOrquesta < array[j].idOrquesta) // Ordena de forma descendente por nombre
+                        {
+
+                            musicoAux = array[i];
+                            array[i] = array[j];
+                            array[j] = musicoAux;
+
+                        }
+
+                    }
+                }
+                musico_listar(array, tam);
+                break;
+        }
+
+
+
+        retorno=0;
+    }
+    return retorno;
+}
+
 
 //*****************************************
 //Listar
