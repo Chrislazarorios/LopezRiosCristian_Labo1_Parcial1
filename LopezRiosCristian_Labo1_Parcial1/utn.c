@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+//#include <stdio_ext.h>
 #include "utn.h"
 
 /*
@@ -110,7 +112,7 @@ int utn_getUnsignedInt(  char* msg,char* msgError,int minSize,int maxSize,int mi
     int retorno=-1;
     char bufferStr[maxSize];
 
-    if(msg!=NULL && msgError!=NULL && minSize<maxSize && min<=max && reintentos>=0 && input!=NULL) // valida los parametros de la funcion
+    if(msg!=NULL && msgError!=NULL && minSize<=maxSize && min<=max && reintentos>=0 && input!=NULL) // valida los parametros de la funcion
     {
         do
         {
@@ -149,6 +151,10 @@ int isValidNumber(char* stringRecibido)
     }
     return retorno;
 }
+
+
+
+
 //-------------------------------------------------
 int utn_getSignedInt(char* msg, char* msgError, int minSize, int maxSize, int min, int max, int reintentos, int* input) // Acepta numeros con signo positivo y negativo
 {
@@ -597,17 +603,21 @@ int isValidChar(char charRecibido)
 int utn_getDate(char* msg, char* msgError, int minDate, int maxDate, int reintentos, int* resultado)
 {
     int ret = -1;
+    int auxResultado;
 
-    if(msg!=NULL && msgError!=NULL && minDate<maxDate && reintentos>=0)  // valida los parametros de la funcion
+    if(msg!=NULL && msgError!=NULL && minDate<maxDate && reintentos>=0 && resultado != NULL)  // valida los parametros de la funcion
     {
         do
         {
             printf(msg);
-            scanf("%d", resultado);
-            if( *resultado > minDate && *resultado <= maxDate)
+//            _fpurge(stdin)
+            scanf("%d", &auxResultado);
+            if( auxResultado > minDate && auxResultado <= maxDate)
             {
+                *resultado = auxResultado;
+                printf("Fecha ingresada correctamente!!");
                 ret = 0;
-                printf("Fecha ingresada correctamente!!.");
+                fflush(stdin);
                 break;
             }
             else
@@ -622,4 +632,34 @@ int utn_getDate(char* msg, char* msgError, int minDate, int maxDate, int reinten
     return ret;
 }
 
+int utn_getEdad(char* msg, char* msgError, int minAge, int maxAge, int reintentos, int* resultado)
+{
+    int retornar = -1;
+    int auxResultado;
 
+    if(msg!=NULL && msgError!=NULL && minAge<maxAge && reintentos>=0 && resultado != NULL)  // valida los parametros de la funcion
+    {
+        do
+        {
+            printf(msg);
+//            _fpurge(stdin)
+            scanf("%d", &auxResultado);
+            if( auxResultado > minAge && auxResultado <= maxAge)
+            {
+                *resultado = auxResultado;
+                printf("Edad ingresada correctamente!!");
+                retornar = 0;
+                fflush(stdin);
+                break;
+            }
+            else
+            {
+                printf("\n%s \n",msgError);
+                printf("\nQuedan %d intentos\n", reintentos);
+                reintentos--;
+            }
+        }
+        while(reintentos>= 0);
+    }
+    return retornar;
+}

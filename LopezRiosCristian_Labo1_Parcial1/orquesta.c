@@ -2,11 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
+#include <ctype.h>
 //#include <stdio_ext.h>
-#include "utn.h"
-#include "orquesta.h"
 #include "musico.h"
+#include "orquesta.h"
+#include "utn.h"
 #include "instrumento.h"
+#include "informes.h"
+
+
+
+
 
 
 /** \brief  To indicate that all position in the array are empty,
@@ -157,6 +163,7 @@ int orquesta_alta(Orquesta array[], int tam, int* contadorID)                   
 {
     int retorno=-1;
     int posicion;
+    int *auxTipoStr;
     if(array!=NULL && tam>0 && contadorID!=NULL)
     {
         if(orquesta_buscarEmpty(array,tam,&posicion)==-1)                          //cambiar orquesta
@@ -170,9 +177,23 @@ int orquesta_alta(Orquesta array[], int tam, int* contadorID)                   
             array[posicion].isEmpty=0;
             utn_getName("\nIngrese nombre de orquesta: ","\nError",1,TEXT_SIZE,3,array[posicion].nombre);                      //mensaje + cambiar campo nombre
             utn_getTexto("\nIngrese lugar de orquesta: ","\nError",1,TEXT_SIZE,1,array[posicion].lugar);                 //mensaje + cambiar campo varLongString
-            utn_getUnsignedInt("\nIngrese tipo de orquesta(1/2/3): ","\nError",1,sizeof(int),1,1,1,&array[posicion].tipo);           //mensaje + cambiar campo varInt
-            printf("\n Posicion: %d\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %d\n",
-                   posicion, array[posicion].idOrquesta,array[posicion].nombre,array[posicion].lugar,array[posicion].tipo);
+            utn_getUnsignedInt("\nIngrese tipo de orquesta(1:Sinfonica/2:Filarmonica/3:Camara): ","\nError",1,sizeof(int),1,1,1,&array[posicion].tipo);           //mensaje + cambiar campo varInt
+            auxTipoStr = &array[posicion].tipo;
+            switch(*auxTipoStr)
+            {
+                case 1:
+                    strcpy(array[posicion].tipoStr,"Sinfonica");
+                    break;
+                case 2:
+                    strcpy(array[posicion].tipoStr,"Filarmonica");
+                    break;
+                case 3:
+                    strcpy(array[posicion].tipoStr,"Camara");
+                    break;
+            }
+
+            printf("\n Posicion: %d\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %s\n",
+                   posicion, array[posicion].idOrquesta,array[posicion].nombre,array[posicion].lugar,array[posicion].tipoStr);
             retorno=0;
         }
     }
@@ -187,25 +208,42 @@ int orquesta_alta(Orquesta array[], int tam, int* contadorID)                   
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
 *
 */
-int orquesta_baja(Orquesta array[], int tamArray)                                      //cambiar orquesta
+int orquesta_baja(Orquesta arrayOrquesta[], Musico arrayMusico[], int tamArray)                                      //cambiar orquesta
 {
     int retorno=-1;
-    int posicion;
-    int id;
-    if(array!=NULL && tamArray>0)
+    int posicionOrquesta;
+    int posicionMusico;
+    int idAEliminar;
+    if(arrayOrquesta!=NULL && tamArray>0)
     {
-        utn_getUnsignedInt("\nID a cancelar: ","\nError",1,tamArray,1,tamArray,1,&id);          //cambiar si no se busca por ID
-        if(orquesta_buscarID(array,tamArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
+        orquesta_listar(arrayOrquesta, tamArray);
+        utn_getUnsignedInt("\nID de orquesta a cancelar: ","\nError",1,tamArray,1,tamArray,1,&idAEliminar);          //cambiar si no se busca por ID
+        if(orquesta_buscarID(arrayOrquesta,tamArray,idAEliminar,&posicionOrquesta)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
         }
         else
         {
-            array[posicion].isEmpty=1;
-            array[posicion].idOrquesta=0;                                                                   //cambiar campo id
-            array[posicion].tipo=0;                                                               //cambiar campo varInt
-            strcpy(array[posicion].nombre,"");                                                   //cambiar campo nombre
-            strcpy(array[posicion].lugar,"");                                               //cambiar campo varLongString
+            if(!musico_buscarInt(arrayMusico, tamArray, idAEliminar, &posicionMusico ))
+            {
+                printf("Se elimino al musico : \n");
+                printf("\n Posicion: %d\n ID: %d\n nombre: %s\n apellido: %s\n edad: %d\n idOrquesta: %d\n idInstrumento: %d\n",
+                   posicionMusico, arrayMusico[posicionMusico].idMusico,arrayMusico[posicionMusico].nombre,arrayMusico[posicionMusico].apellido,arrayMusico[posicionMusico].edad,arrayMusico[posicionMusico].idOrquesta,arrayMusico[posicionMusico].idInstrumento);
+                arrayMusico[posicionMusico].isEmpty = 1;
+                arrayMusico[posicionMusico].idMusico = 0;
+                arrayMusico[posicionMusico].idOrquesta = 0;
+                arrayMusico[posicionMusico].idInstrumento = 0;
+                arrayMusico[posicionMusico].edad = 0;
+                strcpy(arrayMusico[posicionMusico].nombre,"");
+                strcpy(arrayMusico[posicionMusico].apellido,"");                                                   //cambiar campo nombre
+
+            }
+
+            arrayOrquesta[posicionOrquesta].isEmpty=1;
+            arrayOrquesta[posicionOrquesta].idOrquesta=0;                                                                   //cambiar campo id
+            arrayOrquesta[posicionOrquesta].tipo=0;                                                               //cambiar campo varInt
+            strcpy(arrayOrquesta[posicionOrquesta].nombre,"");                                                   //cambiar campo nombre
+            strcpy(arrayOrquesta[posicionOrquesta].lugar,"");                                               //cambiar campo varLongString
             retorno=0;
             printf("Orquesta eliminada exitosamente!!");
         }
@@ -259,9 +297,12 @@ int orquesta_modificar(Orquesta array[], int tamArray)                          
     int posicion;
     int id;                                                                                         //cambiar si no se busca por ID
     char opcion;
+    char opcionAux;
+
     if(array!=NULL && tamArray>0)
     {
-        utn_getUnsignedInt("\nID a modificar: ","\nError",1,sizeof(int),1,tamArray,1,&id);         //cambiar si no se busca por ID
+        orquesta_listar(array, tamArray);
+        utn_getUnsignedInt("\nID de orquesta a modificar: ","\nError",1,sizeof(int),1,tamArray,1,&id);         //cambiar si no se busca por ID
         if(orquesta_buscarID(array,tamArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -273,7 +314,8 @@ int orquesta_modificar(Orquesta array[], int tamArray)                          
                 printf("\n Posicion: %d\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %d\n",
                    posicion, array[posicion].idOrquesta,array[posicion].nombre,array[posicion].lugar,array[posicion].tipo);
                 utn_getChar("\nModificar: \nA: nombre \nB: lugar \nC: tipo \nS: salir\nElija una opcion(A/B/C/S):","\nError",'A','Z',1,&opcion);
-                switch(opcion)
+                opcionAux = toupper(opcion);
+                switch(opcionAux)
                 {
                     case 'A':
                         utn_getName("\nIngrese nuevo nombre de orquesta: ","\nError",1,TEXT_SIZE,1,array[posicion].nombre);                      //mensaje + cambiar campo nombre
@@ -291,7 +333,7 @@ int orquesta_modificar(Orquesta array[], int tamArray)                          
                     default:
                         printf("\nOpcion no valida");
                 }
-            }while(opcion!='S');
+            }while(opcionAux!='S');
             retorno=0;
         }
     }
@@ -299,7 +341,7 @@ int orquesta_modificar(Orquesta array[], int tamArray)                          
 }
 
 //*****************************************
-//Ordenar
+//Ordenar por String
 /** \brief Ordena por campo XXXXX los elementos de un array
 * \param array orquesta Array de orquesta
 * \param tam int Tamaño del array
@@ -456,6 +498,91 @@ int orquesta_ordenarPorString(Orquesta array[],int tam)                         
     }
     return retorno;
 }
+// Ordenar por Int
+//*****************************************
+
+int orquesta_ordenarPorInt(Orquesta array[],int tam)
+{
+    int retorno = -1;
+    int i, j;
+    int opcion;
+
+    Orquesta orquestaAux;
+
+    if(array!=NULL && tam>=0)
+    {
+
+        utn_getUnsignedInt("Como desea ordenar? Elija una opcion : \n1 - Ordenar de forma ascendente (A - Z)\n2 - Ordenar de forma descendente (Z - A)\n","\nError", 1, sizeof(int), 1, 1, 3, &opcion);
+
+
+        while(opcion != 1 && opcion != 2)
+        {
+            utn_getUnsignedInt("Error, seleccione opcion 1 o 2 : \n","\nError", 1, sizeof(int), 1, 1, 3, &opcion);
+        }
+
+
+        switch(opcion)
+        {
+            case 1:
+                for(i = 0; i < tam - 1; i++)
+                {
+                    if(array[i].isEmpty == 1)
+                    {
+                        continue;
+                    }
+                    for(j = i + 1; j < tam; j++)
+                    {
+                        if(array[j].isEmpty == 1)
+                        {
+                            continue;
+                        }
+                        if(array[i].tipo > array[j].tipo) // Ordena de forma ascendente por nombre
+                        {
+
+                            orquestaAux = array[i];
+                            array[i] = array[j];
+                            array[j] = orquestaAux;
+
+                        }
+                    }
+                }
+                orquesta_listar(array, tam);
+                break;
+            case 2:
+                for(i = 0; i < tam - 1; i++)
+                {
+                    if(array[i].isEmpty == 1)
+                    {
+                        continue;
+                    }
+                    for(j = i + 1; j < tam; j++)
+                    {
+                        if(array[j].isEmpty == 1)
+                        {
+                            continue;
+                        }
+                        if(array[i].tipo < array[j].tipo) // Ordena de forma descendente por nombre
+                        {
+
+                            orquestaAux = array[i];
+                            array[i] = array[j];
+                            array[j] = orquestaAux;
+
+                        }
+
+                    }
+                }
+                orquesta_listar(array, tam);
+                break;
+        }
+
+
+
+        retorno=0;
+    }
+    return retorno;
+}
+
 
 //*****************************************
 //Listar

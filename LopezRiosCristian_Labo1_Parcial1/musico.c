@@ -1,9 +1,14 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
+#include <ctype.h>
+//#include <stdio_ext.h>
 #include "utn.h"
-#include "musico.h" //cambiar por nombre entidad
-
+#include "musico.h"
+#include "orquesta.h"
+#include "instrumento.h"
+#include "informes.h"
 
 /** \brief  To indicate that all position in the array are empty,
 *          this function put the flag (isEmpty) in TRUE in all
@@ -100,7 +105,7 @@ int musico_buscarInt(Musico array[], int tam, int valorBuscado, int* posicion)  
         {
             if(array[i].isEmpty==1)
                 continue;
-            else if(array[i].edad==valorBuscado)                                                   //cambiar campo varInt
+            else if(array[i].idOrquesta==valorBuscado)                                                   //cambiar campo varInt
             {
                 retorno=0;
                 *posicion=i;
@@ -149,28 +154,30 @@ int musico_buscarString(Musico array[], int tam, char* valorBuscado, int* indice
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
 *
 */
-int musico_alta(Musico array[], int tam, int* contadorID)                          //cambiar musico
+int musico_alta(Musico arrayMusico[], int tam, int* contadorID)                         //cambiar musico
 {
     int retorno=-1;
     int posicion;
-    if(array!=NULL && tam>0 && contadorID!=NULL)
+    if(arrayMusico!=NULL && tam>0 && contadorID!=NULL)
     {
-        if(musico_buscarEmpty(array,tam,&posicion)==-1)                          //cambiar musico
+        if(musico_buscarEmpty(arrayMusico,tam,&posicion)==-1)                          //cambiar musico
         {
             printf("\nNo hay lugares vacios");
         }
         else
         {
             (*contadorID)++;
-            array[posicion].idMusico=*contadorID;                                                       //campo ID
-            array[posicion].isEmpty=0;
-            utn_getName("\nIngrese nombre de musico: ","\nError",1,TEXT_SIZE,3,array[posicion].nombre);                      //mensaje + cambiar campo nombre
-            utn_getName("\nIngrese apellido de musico: ","\nError",1,TEXT_SIZE,3,array[posicion].apellido);                      //mensaje + cambiar campo nombre
-            utn_getUnsignedInt("\nIngrese edad de musico: ","\nError",1,sizeof(int),1,1,1,&array[posicion].edad);           //mensaje + cambiar campo varInt
-            utn_getUnsignedInt("\nIngrese idOrquesta de musico: ","\nError",1,sizeof(int),1,1,1,&array[posicion].idOrquesta);           //mensaje + cambiar campo varInt
-            utn_getUnsignedInt("\nIngrese idInstrumento de musico: ","\nError",1,sizeof(int),1,1,1,&array[posicion].idInstrumento);           //mensaje + cambiar campo varInt
+            arrayMusico[posicion].idMusico=*contadorID;                                                       //campo ID
+            arrayMusico[posicion].isEmpty=0;
+            utn_getName("\nIngrese nombre de musico: ","\nError",1,TEXT_SIZE,3,arrayMusico[posicion].nombre);                      //mensaje + cambiar campo nombre
+            utn_getName("\nIngrese apellido de musico: ","\nError",1,TEXT_SIZE,3,arrayMusico[posicion].apellido);                      //mensaje + cambiar campo nombre
+            //utn_getUnsignedInt("\nIngrese edad de musico: ","\nError",1,sizeof(int),1,1,1,&arrayMusico[posicion].edad);           //mensaje + cambiar campo varInt
+            utn_getEdad("\nIngrese edad de musico: ","\nError",0,110,3,&arrayMusico[posicion].edad);
+            utn_getUnsignedInt("\nIngrese idOrquesta de musico: ","\nError",0,sizeof(int),0,110,3,&arrayMusico[posicion].idOrquesta);           //mensaje + cambiar campo varInt
+            //informe_getIdOrquesta("\nIngrese idOrquesta de musico: ","\nError", 0, sizeof(int), 1, 1, 3, &arrayMusico[posicion].idOrquesta, arrayOrquesta, tam);
+            utn_getUnsignedInt("\nIngrese idInstrumento de musico: ","\nError",1,sizeof(int),1,1,3,&arrayMusico[posicion].idInstrumento);           //mensaje + cambiar campo varInt
             printf("\n Posicion: %d\n ID: %d\n nombre: %s\n apellido: %s\n edad: %d\n idOrquesta: %d\n idInstrumento: %d\n",
-                   posicion, array[posicion].idMusico,array[posicion].nombre,array[posicion].apellido,array[posicion].edad,array[posicion].idOrquesta,array[posicion].idInstrumento);
+                   posicion, arrayMusico[posicion].idMusico,arrayMusico[posicion].nombre,arrayMusico[posicion].apellido,arrayMusico[posicion].edad,arrayMusico[posicion].idOrquesta,arrayMusico[posicion].idInstrumento);
             retorno=0;
         }
     }
@@ -192,7 +199,8 @@ int musico_baja(Musico array[], int tamArray)                                   
     int id;
     if(array!=NULL && tamArray>0)
     {
-        utn_getUnsignedInt("\nID a cancelar: ","\nError",1,sizeof(int),1,tamArray,1,&id);          //cambiar si no se busca por ID
+        musico_listar(array, tamArray);
+        utn_getUnsignedInt("\nID de musico a cancelar: ","\nError",1,sizeof(int),1,tamArray,1,&id);          //cambiar si no se busca por ID
         if(musico_buscarID(array,tamArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -262,9 +270,12 @@ int musico_modificar(Musico array[], int tamArray)                              
     int posicion;
     int id;                                                                                         //cambiar si no se busca por ID
     char opcion;
+    char opcionAux;
+
     if(array!=NULL && tamArray>0)
     {
-        utn_getUnsignedInt("\nID a modificar: ","\nError",1,sizeof(int),1,tamArray,1,&id);         //cambiar si no se busca por ID
+        musico_listar(array, tamArray);
+        utn_getUnsignedInt("\nID de musico a modificar: ","\nError",1,sizeof(int),1,tamArray,1,&id);         //cambiar si no se busca por ID
         if(musico_buscarID(array,tamArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -276,7 +287,8 @@ int musico_modificar(Musico array[], int tamArray)                              
                 printf("\n Posicion: %d\n ID: %d\n nombre: %s\n apellido: %s\n edad: %d\n idOrquesta: %d\n idInstrumento: %d\n",
                    posicion, array[posicion].idMusico,array[posicion].nombre,array[posicion].apellido,array[posicion].edad,array[posicion].idOrquesta,array[posicion].idInstrumento);
                 utn_getChar("\nModificar: \nA: nombre \nB: apellido \nC: edad \nD: idOrquesta \nE: idInstrumento \nS: salir\nElija una opcion(A/B/C/D/E/S):","\nError",'A','Z',1,&opcion);
-                switch(opcion)
+                opcionAux = toupper(opcion);
+                switch(opcionAux)
                 {
                     case 'A':
                         utn_getName("\nIngrese nuevo nombre de musico: ","\nError",1,TEXT_SIZE,1,array[posicion].nombre);                      //mensaje + cambiar campo nombre
@@ -298,7 +310,7 @@ int musico_modificar(Musico array[], int tamArray)                              
                     default:
                         printf("\nOpcion no valida");
                 }
-            }while(opcion!='S');
+            }while(opcionAux!='S');
             retorno=0;
         }
     }
@@ -571,3 +583,4 @@ int musico_listar(Musico array[], int tam)                      //cambiar musico
     }
     return retorno;
 }
+

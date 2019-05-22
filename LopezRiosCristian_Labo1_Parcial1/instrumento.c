@@ -1,8 +1,10 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "utn.h"
 #include "instrumento.h" //cambiar por nombre entidad
+#include "informes.h"
 
 
 
@@ -205,7 +207,8 @@ int instrumento_baja(Instrumento array[], int tamArray)                         
     int id;
     if(array!=NULL && tamArray>0)
     {
-        utn_getUnsignedInt("\nID a cancelar: ","\nError",1,sizeof(int),1,tamArray,1,&id);          //cambiar si no se busca por ID
+        instrumento_listar(array, tamArray);
+        utn_getUnsignedInt("\nID de instrumento a cancelar: ","\nError",1,sizeof(int),1,tamArray,1,&id);          //cambiar si no se busca por ID
         if(instrumento_buscarID(array,tamArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -267,9 +270,12 @@ int instrumento_modificar(Instrumento array[], int tamArray)                    
     int posicion;
     int id;                                                                                         //cambiar si no se busca por ID
     char opcion;
+    char opcionAux;
+
     if(array!=NULL && tamArray>0)
     {
-        utn_getUnsignedInt("\nID a modificar: ","\nError",1,sizeof(int),1,tamArray,1,&id);         //cambiar si no se busca por ID
+        instrumento_listar(array, tamArray);
+        utn_getUnsignedInt("\nID de instrumento a modificar: ","\nError",1,sizeof(int),1,tamArray,1,&id);         //cambiar si no se busca por ID
         if(instrumento_buscarID(array,tamArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -281,7 +287,8 @@ int instrumento_modificar(Instrumento array[], int tamArray)                    
                 printf("\n Posicion: %d\n ID: %d\n nombre: %s\n tipo: %d\n",
                    posicion, array[posicion].idInstrumento,array[posicion].nombre,array[posicion].tipo);
                 utn_getChar("\nModificar: \nA: nombre \nB: tipo \nS: salir\nElija una opcion(A/B/S):","\nError",'A','Z',1,&opcion);
-                switch(opcion)
+                opcionAux = toupper(opcion);
+                switch(opcionAux)
                 {
                     case 'A':
                         utn_getName("\nIngrese nuevo nombre de instrumento: ","\nError",1,TEXT_SIZE,1,array[posicion].nombre);                      //mensaje + cambiar campo nombre
@@ -294,7 +301,7 @@ int instrumento_modificar(Instrumento array[], int tamArray)                    
                     default:
                         printf("\nOpcion no valida");
                 }
-            }while(opcion!='S');
+            }while(opcionAux!='S');
             retorno=0;
         }
     }

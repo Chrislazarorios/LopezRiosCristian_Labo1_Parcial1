@@ -2,9 +2,6 @@
 #define INSTRUMENTO_H_INCLUDED
 
 #define TEXT_SIZE 20
-#define TIPO4 Cuerdas
-#define TIPO5 Viento-madera
-#define TIPO6 Percusion
 
 
 typedef struct

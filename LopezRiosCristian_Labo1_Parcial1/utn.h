@@ -35,3 +35,4 @@ int isValidChar(char charRecibido);
 
 int utn_getDate(char* msg, char* msgError, int minDate, int maxDate, int reintentos, int* resultado);
 
+int utn_getEdad(char* msg, char* msgError, int minAge, int maxAge, int reintentos, int* resultado);
