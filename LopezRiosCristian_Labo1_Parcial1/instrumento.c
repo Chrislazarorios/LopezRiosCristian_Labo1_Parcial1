@@ -271,6 +271,7 @@ int instrumento_modificar(Instrumento array[], int tamArray)                    
     int id;                                                                                         //cambiar si no se busca por ID
     char opcion;
     char opcionAux;
+    int* auxTipoStr;
 
     if(array!=NULL && tamArray>0)
     {
@@ -284,8 +285,8 @@ int instrumento_modificar(Instrumento array[], int tamArray)                    
         {
             do
             {       //copiar printf de alta
-                printf("\n Posicion: %d\n ID: %d\n nombre: %s\n tipo: %d\n",
-                   posicion, array[posicion].idInstrumento,array[posicion].nombre,array[posicion].tipo);
+                printf("\n Posicion: %d\n ID: %d\n nombre: %s\n tipo: %d\n nombre de tipo: %s\n",
+                   posicion, array[posicion].idInstrumento,array[posicion].nombre,array[posicion].tipo, array[posicion].tipoStr);
                 utn_getChar("\nModificar: \nA: nombre \nB: tipo \nS: salir\nElija una opcion(A/B/S):","\nError",'A','Z',1,&opcion);
                 opcionAux = toupper(opcion);
                 switch(opcionAux)
@@ -295,6 +296,20 @@ int instrumento_modificar(Instrumento array[], int tamArray)                    
                         break;
                     case 'B':
                         utn_getUnsignedInt("\nIngrese nuevo tipo de instrumento: ","\nError",1,sizeof(int),1,1,1,&array[posicion].tipo);           //mensaje + cambiar campo tipo
+
+                        auxTipoStr = &array[posicion].tipo;
+                        switch(*auxTipoStr)
+                        {
+                            case 1:
+                                strcpy(array[posicion].tipoStr,"Cuerdas");
+                                break;
+                            case 2:
+                                strcpy(array[posicion].tipoStr,"Viento-madera");
+                                break;
+                            case 3:
+                                strcpy(array[posicion].tipoStr,"Viento-madera");
+                                break;
+                        }
                         break;
                     case 'S':
                         break;

@@ -298,6 +298,7 @@ int orquesta_modificar(Orquesta array[], int tamArray)                          
     int id;                                                                                         //cambiar si no se busca por ID
     char opcion;
     char opcionAux;
+    int *auxTipoStr;
 
     if(array!=NULL && tamArray>0)
     {
@@ -311,8 +312,8 @@ int orquesta_modificar(Orquesta array[], int tamArray)                          
         {
             do
             {       //copiar printf de alta
-                printf("\n Posicion: %d\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %d\n",
-                   posicion, array[posicion].idOrquesta,array[posicion].nombre,array[posicion].lugar,array[posicion].tipo);
+                printf("\n Posicion: %d\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %d\n nombre de tipo: %s\n",
+                   posicion, array[posicion].idOrquesta,array[posicion].nombre,array[posicion].lugar,array[posicion].tipo, array[posicion].tipoStr);
                 utn_getChar("\nModificar: \nA: nombre \nB: lugar \nC: tipo \nS: salir\nElija una opcion(A/B/C/S):","\nError",'A','Z',1,&opcion);
                 opcionAux = toupper(opcion);
                 switch(opcionAux)
@@ -326,6 +327,19 @@ int orquesta_modificar(Orquesta array[], int tamArray)                          
                         break;
                     case 'C':
                         utn_getUnsignedInt("\nIngrese nuevo tipo de orquesta: ","\nError",1,sizeof(int),1,1,1,&array[posicion].tipo);           //mensaje + cambiar campo varInt
+                        auxTipoStr = &array[posicion].tipo;
+                        switch(*auxTipoStr)
+                        {
+                            case 1:
+                                strcpy(array[posicion].tipoStr,"Sinfonica");
+                                break;
+                            case 2:
+                                strcpy(array[posicion].tipoStr,"Filarmonica");
+                                break;
+                            case 3:
+                                strcpy(array[posicion].tipoStr,"Camara");
+                                break;
+                        }
 
                         break;
                     case 'S':
@@ -334,6 +348,8 @@ int orquesta_modificar(Orquesta array[], int tamArray)                          
                         printf("\nOpcion no valida");
                 }
             }while(opcionAux!='S');
+//            printf("\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %d\n nombre de tipo: %s\n",
+//                   array[posicion].idOrquesta,array[posicion].nombre,array[posicion].lugar,array[posicion].tipo, array[posicion].tipoStr);
             retorno=0;
         }
     }
@@ -500,6 +516,13 @@ int orquesta_ordenarPorString(Orquesta array[],int tam)                         
 }
 // Ordenar por Int
 //*****************************************
+/** \brief Ordena por campo tipo los elementos de un array
+ *
+ * \param array orquesta Array de orquesta
+ * \param tam int Tamaño del array
+ * \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se ordena exitosamente
+ *
+ */
 
 int orquesta_ordenarPorInt(Orquesta array[],int tam)
 {
@@ -603,8 +626,8 @@ int orquesta_listar(Orquesta array[], int tam)                      //cambiar or
             if(array[i].isEmpty==1)
                 continue;
             else
-            printf("\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %d\n",
-                   array[i].idOrquesta,array[i].nombre,array[i].lugar,array[i].tipo);
+            printf("\n ID: %d\n nombre: %s\n lugar: %s\n tipo: %d\n nombre de tipo: %s\n",
+                   array[i].idOrquesta,array[i].nombre,array[i].lugar,array[i].tipo, array[i].tipoStr);
         }
         retorno=0;
     }

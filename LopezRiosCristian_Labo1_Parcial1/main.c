@@ -11,7 +11,7 @@
 
 #define QTY_ORQUESTA 50
 #define QTY_INSTRUMENTO 20
-#define QTY_MUSICO 1000
+#define QTY_MUSICO 15
 
 // tipos de orquesta
 #define ORQTIPO1 sinfonica
@@ -25,6 +25,12 @@
 
 int main()
 {
+//    int auxTotalOrq;
+//    float auxFloatOrq;
+//    int auxTotalMus;
+//    float auxFloatMus;
+//    float prom;
+
     int opcion;
     int contadorIdorquesta = 0;
     int contadorIdmusico = 0;                   //cambiar
@@ -47,7 +53,7 @@ int main()
     strncpy(arrayOrquesta[0].nombre, "Orquesta1", sizeof(arrayOrquesta[0].nombre));
     strncpy(arrayOrquesta[0].lugar, "Lugar1", sizeof(arrayOrquesta[0].lugar));
     arrayOrquesta[0].tipo = 1;
-    strncpy(arrayOrquesta[0].tipoStr, "camara", sizeof(arrayOrquesta[0].tipoStr));
+    strncpy(arrayOrquesta[0].tipoStr, "sinfonica", sizeof(arrayOrquesta[0].tipoStr));
 
     arrayOrquesta[1].isEmpty = 0;
     arrayOrquesta[1].idOrquesta = 2;
@@ -70,7 +76,7 @@ int main()
     strncpy(arrayOrquesta[3].nombre, "Orquesta4", sizeof(arrayOrquesta[3].nombre));
     strncpy(arrayOrquesta[3].lugar, "Lugar3", sizeof(arrayOrquesta[3].lugar));
     arrayOrquesta[3].tipo = 3;
-    strncpy(arrayOrquesta[3].tipoStr, "sinfonica", sizeof(arrayOrquesta[3].tipoStr));
+    strncpy(arrayOrquesta[3].tipoStr, "camara", sizeof(arrayOrquesta[3].tipoStr));
     //***************************************************
 
     arrayMusico[0].isEmpty = 0;
@@ -121,6 +127,8 @@ int main()
     arrayMusico[5].idOrquesta = 3;
     arrayMusico[5].idInstrumento = 4;
 
+
+
 //    //***************************************************
 
 
@@ -143,7 +151,7 @@ int main()
     arrayInstrumento[2].isEmpty = 0;
     arrayInstrumento[2].idInstrumento = 3;
     strncpy(arrayInstrumento[2].nombre, "Inst3", sizeof(arrayInstrumento[2].nombre));
-    strncpy(arrayInstrumento[2].tipoStr, "Percusion", sizeof(arrayInstrumento[2].nombre));
+    strncpy(arrayInstrumento[2].tipoStr, "Viento-madera", sizeof(arrayInstrumento[2].nombre));
     arrayInstrumento[2].tipo = 2;
 
 
@@ -162,10 +170,11 @@ int main()
 
 
 
+
     do
     {
         utn_getUnsignedInt("\n\n1) Alta Orquesta\n2) Baja Orquesta\n3) Listar Orquesta\n****************************\n4) Alta Musico\n5) Modificar Musico\n6) Baja Musico\n7) Listar Musicos\n****************************\n8) Alta Instrumento\n9) Listar Instrumento\n****************************\n10) informe a\n11) informe b\n12) informe c \n13) informe d \n14) informe e\n15) informe f\n16) informe g\n17) informe h\n****************************\n18) Salir\n",  //cambiar
-                      "\nError",1,sizeof(int),1,20,1,&opcion);
+                      "\nError",1,sizeof(int),1,20,5,&opcion);
         switch(opcion)
         {
             case 1: //Alta
@@ -200,11 +209,11 @@ int main()
                 instrumento_listar(arrayInstrumento, QTY_INSTRUMENTO);
                 break;
             case 10:
-                inf_a(arrayMusico, arrayOrquesta, QTY_MUSICO);
-                //orquesta_modificar(arrayOrquesta, QTY_ORQUESTA);
+                inf_a(arrayMusico, arrayOrquesta, QTY_MUSICO, QTY_ORQUESTA);
+//                orquesta_modificar(arrayOrquesta, QTY_ORQUESTA);
                 break;
             case 11:
-                inf_b(arrayMusico, QTY_MUSICO);
+                inf_b(arrayMusico, arrayOrquesta, arrayInstrumento,QTY_MUSICO, QTY_ORQUESTA, QTY_INSTRUMENTO);
                 //orquesta_ordenarPorString(arrayOrquesta, QTY_ORQUESTA);
                 break;
             case 12:
@@ -212,24 +221,24 @@ int main()
                 //musico_ordenarPorString(arrayMusico, QTY_MUSICO);
                 break;
             case 13:
-                //inf_d();
+                inf_d(arrayMusico, arrayOrquesta, arrayInstrumento, QTY_MUSICO, QTY_ORQUESTA, QTY_INSTRUMENTO);
                 //instrumento_baja(arrayInstrumento, QTY_INSTRUMENTO);
                 break;
             case 14:
-                inf_e(arrayMusico, QTY_MUSICO);
+                inf_e(arrayMusico, arrayOrquesta, arrayInstrumento, QTY_MUSICO, QTY_ORQUESTA, QTY_INSTRUMENTO);
                 //instrumento_modificar(arrayInstrumento, QTY_INSTRUMENTO);
                 break;
             case 15:
-                //inf_f(arrayMusico, QTY_MUSICO);
+                inf_f(arrayMusico, arrayOrquesta,  QTY_MUSICO,  QTY_ORQUESTA);
 //                instrumento_ordenarPorString(arrayInstrumento, QTY_INSTRUMENTO);
                 //informe_orquestaMasRepetida(arrayOrquesta, QTY_ORQUESTA);
                 break;
             case 16:
-                //inf_g(arrayMusico, QTY_MUSICO);
+                inf_g(arrayMusico, arrayInstrumento, arrayOrquesta, QTY_MUSICO, QTY_ORQUESTA, QTY_INSTRUMENTO);
                 //instrumento_modificar(arrayInstrumento, QTY_INSTRUMENTO);
                 break;
             case 17:
-                //inf_h(arrayMusico, arrayOrquesta, QTY_MUSICO);
+                inf_h( arrayMusico, arrayOrquesta, QTY_ORQUESTA, QTY_MUSICO);
                 //instrumento_modificar(arrayInstrumento, QTY_INSTRUMENTO);
                 break;
             case 18://Salir

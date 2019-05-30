@@ -554,6 +554,13 @@ int musico_ordenarPorString(Musico array[],int tam)                             
 }
 
 //*****************************************
+/** \brief Ordena por campo XXXXX los elementos de un array
+ *
+ * \param array musico Array de musico
+ * \param tam int Tamaño del array
+ * \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se ordena exitosamente
+ *
+ */
 
 int musico_ordenarPorInt(Musico array[],int tam)
 {
@@ -590,7 +597,7 @@ int musico_ordenarPorInt(Musico array[],int tam)
                         {
                             continue;
                         }
-                        if(array[i].idOrquesta > array[j].idOrquesta) // Ordena de forma ascendente por nombre
+                        if(array[i].idOrquesta > array[j].idOrquesta) // Ordena de forma ascendente por idOrquesta
                         {
 
                             musicoAux = array[i];
@@ -615,7 +622,7 @@ int musico_ordenarPorInt(Musico array[],int tam)
                         {
                             continue;
                         }
-                        if(array[i].idOrquesta < array[j].idOrquesta) // Ordena de forma descendente por nombre
+                        if(array[i].idOrquesta < array[j].idOrquesta) // Ordena de forma descendente por idOrquesta
                         {
 
                             musicoAux = array[i];

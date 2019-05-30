@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include "utn.h"
 
 /*
@@ -642,14 +642,14 @@ int utn_getEdad(char* msg, char* msgError, int minAge, int maxAge, int reintento
         do
         {
             printf(msg);
-            __fpurge(stdin);
+            //__fpurge(stdin);
             scanf("%d", &auxResultado);
             if( auxResultado > minAge && auxResultado <= maxAge)
             {
                 *resultado = auxResultado;
                 printf("Edad ingresada correctamente!!");
                 retornar = 0;
-                //fflush(stdin);
+                fflush(stdin);
                 break;
             }
             else

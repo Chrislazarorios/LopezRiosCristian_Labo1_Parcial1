@@ -21,32 +21,31 @@ int cantOrquestasMismoTipo(Orquesta arrayOrquesta[], int tamArray, int tipoACont
 
 //***************************************************************
 
-int inf_a(Musico arrayMusico[], Orquesta arrayOrquesta[], int tamArray);
-int cantMusicoMismoTipo(Orquesta arrayOrquesta[], int tamArray, int idOrqActual);
-int orquestaTieneMusicos(Musico arrayMusico[],int len,int auxIdOrquesta);
+int inf_a(Musico arrayMusico[], Orquesta arrayOrquesta[], int tamMusico, int tamOrquesta);
+int cantMusicoMismoTipo(Musico arrayMusico[], int tamArray, int idOrqActual);
 
 //***************************************************************
 
-int inf_b(Musico arrayMusico[], int tamArray);
+int inf_b(Musico arrayMusico[], Orquesta arrayOrquesta[], Instrumento arrayInstrumento[], int tamMusico, int tamOrquesta, int tamInstrumento);
 //***************************************************************
 
 int inf_c(Orquesta arrayOrquesta[], int tamArray);
 //***************************************************************
 
-//int inf_d(Orquesta arrayOrquesta[], int tamArray);
+int inf_d(Musico arrayMusico[], Orquesta arrayOrquesta[], Instrumento arrayInstrumento[], int tamMusico, int tamOrquesta, int tamInstrumento);
 
 //***************************************************************
 
-int inf_e(Musico arrayMusico[], int tamArray);
+int inf_e(Musico arrayMusico[], Orquesta arrayOrquesta[], Instrumento arrayInstrumento[],  int tamMus, int tamOrq, int tamInst);
 //***************************************************************
 
-int inf_f(Musico arrayMusico[], int tamArray);
+int inf_f(Musico arrayMusico[], Orquesta arrayOrquesta[], int tamMusico, int tamOrquesta);
 //***************************************************************
 
-int inf_g(Musico arrayMusico[], Instrumento arrayInstrumento[], int tamArray);
+int inf_g(Musico arrayMusico[], Instrumento arrayInstrumento[], Orquesta arrayOrquesta[], int tamMus, int tamOrq, int tamInst);
 //***************************************************************
 
-void inf_h(Musico arrayMusico[], Orquesta arrayOrquesta[], int tamArray);
+void inf_h(Musico arrayMusico[], Orquesta arrayOrquesta[], int tamOrq, int tamMus);
 
 
 //***************************************************************
