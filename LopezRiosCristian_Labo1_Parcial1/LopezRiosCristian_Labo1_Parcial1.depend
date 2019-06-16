@@ -1,0 +1,461 @@
+# depslib dependency file v1.0
+1558051570 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"instrumento.h"
+
+1558568541 to.h"
+
+1558048638 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"musico.h"
+
+1558752542 
+
+1558051826 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+
+1557894804 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/utn.h
+
+1558044949 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/orquesta.h
+
+1558046325 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/musico.h
+
+1558051055 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/instrumento.h
+
+1558051968 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+
+1557929122 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1/LopezRiosCristian_Labo1_Parcial1/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1559238192 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"instrumento.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1558561142 h"
+
+1558558574 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/utn.h
+
+1558558574 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/instrumento.h
+
+1559236996 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+
+1558558574 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/orquesta.h
+	"musico.h"
+	"musico.h"
+
+1558558574 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/musico.h
+
+1559236928 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"musico.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"utn.h"
+	"musico.h"
+	"orquesta.h"
+	"instrumento.h"
+	"informes.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"utn.h"
+	"musico.h"
+	"orquesta.h"
+	"instrumento.h"
+	"informes.h"
+
+1558741744 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<stdio_ext.h>
+	"utn.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1558564539 .h>
+
+1558569373 source:c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1558569373 c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\utn.h
+
+1558569373 c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\instrumento.h
+
+1559247726 source:c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"utn.h"
+	"musico.h"
+	"orquesta.h"
+	"instrumento.h"
+	"informes.h"
+
+1558569373 c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\musico.h
+
+1559247609 source:c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1558569373 c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\orquesta.h
+	"musico.h"
+
+1558752542 source:c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1559247794 source:c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+
+1559246808 source:c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1559246788 c:\users\usuario\desktop\main-library\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\informes.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+
+1559238206 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1559235990 /home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/informes.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+
+1559236810 source:/home/alumno/Descargas/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1559238206 source:/media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1558558574 /media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/musico.h
+
+1558558574 /media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/orquesta.h
+	"musico.h"
+
+1558558574 /media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/utn.h
+
+1558558574 /media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/instrumento.h
+
+1559235990 /media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/informes.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+
+1559238192 source:/media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1559236996 source:/media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+
+1559236928 source:/media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"utn.h"
+	"musico.h"
+	"orquesta.h"
+	"instrumento.h"
+	"informes.h"
+
+1559236810 source:/media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1558741744 source:/media/alumno/Lexar/Prog-Lab-I-UTN-C/Practica primer parcial programacion/LopezRiosCristian_Labo1_Parcial1-master/LopezRiosCristian_Labo1_Parcial1/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1559248992 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1558569374 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\utn.h
+
+1558569374 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\instrumento.h
+
+1559246790 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\informes.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+
+1558569374 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\musico.h
+
+1558569374 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\orquesta.h
+	"musico.h"
+
+1559247796 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"utn.h"
+	"orquesta.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+
+1559247728 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"utn.h"
+	"musico.h"
+	"orquesta.h"
+	"instrumento.h"
+	"informes.h"
+
+1559247610 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<ctype.h>
+	"musico.h"
+	"orquesta.h"
+	"utn.h"
+	"instrumento.h"
+	"informes.h"
+
+1558752544 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\practica primer parcial programacion\lopezrioscristian_labo1_parcial1-master\lopezrioscristian_labo1_parcial1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
