@@ -1,0 +1,113 @@
+# depslib dependency file v1.0
+1561680813 source:/home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561681113 /home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/LinkedList.h
+
+1561681711 source:/home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"venta.h"
+	"utn.h"
+
+1561677024 source:/home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"venta.h"
+
+1561677046 /home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/venta.h
+
+1561423522 source:/home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1558558574 /home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/utn.h
+
+1561682373 source:/home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/Controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"LinkedList.h"
+	"venta.h"
+	"utn.h"
+	"Controller.h"
+	"parser.h"
+
+1561679693 /home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/parser.h
+	"LinkedList.h"
+	"venta.h"
+
+1561681514 /home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/Controller.h
+
+1561677136 source:/home/alumno/Descargas/segundoParcial/LopezCristian_Parcial2/venta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+
+1562717149 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"venta.h"
+	"utn.h"
+
+1561691912 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\linkedlist.h
+
+1562704942 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\controller.h
+
+1561687846 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\venta.h
+
+1558569374 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\utn.h
+
+1561687824 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"venta.h"
+
+1562865900 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1561687936 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\venta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+
+1562876424 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"LinkedList.h"
+	"venta.h"
+	"utn.h"
+	"Controller.h"
+	"parser.h"
+
+1561690492 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\parser.h
+	"LinkedList.h"
+	"venta.h"
+
+1562614475 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\segundoparcial\lopezcristian_parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
