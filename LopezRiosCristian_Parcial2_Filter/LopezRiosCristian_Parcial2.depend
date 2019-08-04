@@ -1,0 +1,156 @@
+# depslib dependency file v1.0
+1562888443 source:/home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/Controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"LinkedList.h"
+	"llamada.h"
+	"utn.h"
+	"Controller.h"
+	"parser.h"
+
+1561681112 /home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/LinkedList.h
+
+1561677046 /home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/venta.h
+
+1558558574 /home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/utn.h
+
+1562887394 /home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/Controller.h
+
+1562882965 /home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/parser.h
+	"LinkedList.h"
+	"llamada.h"
+
+1562887743 source:/home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562886138 source:/home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"llamada.h"
+
+1562855102 source:/home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1562882262 source:/home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/llamada.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"llamada.h"
+
+1562883017 /home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/llamada.h
+
+1562888591 source:/home/alumno/Descargas/LopezRiosCristian_Parcial2/LopezRiosCristian_Parcial2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"llamada.h"
+	"utn.h"
+
+1563475132 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"LinkedList.h"
+	"llamada.h"
+	"utn.h"
+	"Controller.h"
+	"parser.h"
+
+1563433137 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\linkedlist.h
+
+1562893816 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\llamada.h
+
+1558569374 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\utn.h
+
+1563474589 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\controller.h
+
+1562893764 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\parser.h
+	"LinkedList.h"
+	"llamada.h"
+
+1563433146 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562893062 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\llamada.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"llamada.h"
+
+1562896938 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"llamada.h"
+
+1562865902 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1563474605 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"llamada.h"
+	"utn.h"
+
+1563433146 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1563433137 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\linkedlist.h
+
+1562893062 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\llamada.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"llamada.h"
+
+1562893816 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\llamada.h
+
+1563474605 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"llamada.h"
+	"utn.h"
+
+1563474589 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\controller.h
+
+1558569374 c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\utn.h
+
+1562896938 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"llamada.h"
+
+1562865902 source:c:\users\usuario\desktop\pendrive\prog-lab-i-utn-c\segundo parcial lab\fantasma\lopezrioscristian_parcial2\lopezrioscristian_parcial2_filter\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
